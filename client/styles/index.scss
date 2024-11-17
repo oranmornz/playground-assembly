@@ -1,6 +1,172 @@
+/* index.scss */
+
+// - - IMPORTS - - //
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
 
-html, 
+// - - GLOBAL VARIABLES - - //
+
+$border-color: #888;
+$background-color: #f8f4e7;
+$font-color: #333;
+$font-family: 'Montserrat', sans-serif;
+$spacing: 10px;
+
+// Font sizes
+$font-size-body: 16px;
+$font-size-h1: 2.5rem;
+$font-size-h2: 1.75rem;
+$font-size-h3: 1.25rem;
+$font-size-h4: $font-size-body;
+
+// - - GLOBAL STYLES - - //
+
 body {
-  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  font-size: $font-size-body;
+  line-height: 1.6;
+  background-color: $background-color;
+  color: $font-color;
 }
+
+// General container styles with margin around both header and main
+.container-header,
+.container-main {
+  margin: $spacing;
+  border-radius: 5px;
+  background-color: $background-color;
+}
+
+// Header layout: vertically aligned and left-aligned items
+.container-header {
+  display: flex;
+  justify-content: space-between; // Space between h3 and nav
+  align-items: center; // Vertically align items in the header
+  border: 1px solid $border-color;
+  padding: $spacing;
+
+  h3 {
+    flex-grow: 1; // Push the nav to the right
+    margin: 0;
+    color: $font-color;
+    font-size: $font-size-h3;
+  }
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing; // Space between links
+
+    a {
+      color: $font-color;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}
+
+
+// Header elements
+h1 {
+  margin: 0;
+  // margin-bottom: 5px;
+  color: $font-color;
+  font-size: $font-size-h1;
+}
+
+h3 {
+  margin: 0;
+  // margin-bottom: 10px;
+  color: $font-color;
+  font-size: $font-size-h3;
+}
+
+// Main container styling
+.container-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $border-color;
+  padding: 10px 150px 10px 150px;
+
+  h2 {
+    margin: 0;
+    // margin-bottom: 5px;
+    color: $font-color;
+    font-size: $font-size-h2;
+    text-align: center;
+  }
+
+  h4 {
+    margin: 0;
+    margin-bottom: $spacing;
+    color: $font-color;
+    font-size: $font-size-h4;
+    text-align: center;
+    font-weight: normal; // Subheading style
+  }
+}
+
+
+// Home page styling
+.home {
+  margin-top: $spacing;
+  text-align: center;
+}
+
+// Splines styling
+
+.splines label {
+  font-weight: bold;
+}
+
+.splines button {
+  padding: $spacing;
+  cursor: pointer;
+}
+
+.container-curvature {
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  // width: 45%;
+  vertical-align: top;
+  margin: $spacing;
+  padding: $spacing;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+} 
+
+.container-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.curve-container {
+  display: flex;
+  // flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  // width: 45%;
+  vertical-align: top;
+  margin: $spacing;
+  padding: $spacing;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+}
+
+.curve-points {
+  display: flex;
+  flex-direction: column;
+}
+
